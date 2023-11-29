@@ -23,5 +23,24 @@ foreach(int el in array)
 Console.WriteLine($" => количество чисел лежащих в отрезке [20,90]: {k}");
 */
 
+//Задача 2: Задайте массив на 10 целых чисел. 
+//Напишите программу, которая определяет количество чётных чисел в массиве.
+Console.Clear();
+Random rnd =  new Random();
 
+int[] array = new int[10];
 
+for(int i=0; i<=9;i++){
+
+    array[i] = rnd.Next(1, 1000);
+}
+
+foreach(int el in array)
+    Console.Write($" {el}");
+
+int k = 0;
+foreach(int el in array)
+    if (el%2==0)
+        k++;
+
+Console.WriteLine($" => количество четных чисел: {k}");

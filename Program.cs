@@ -25,7 +25,7 @@ Console.WriteLine($" => количество чисел лежащих в отр
 
 //Задача 2: Задайте массив на 10 целых чисел. 
 //Напишите программу, которая определяет количество чётных чисел в массиве.
-Console.Clear();
+/*Console.Clear();
 Random rnd =  new Random();
 
 int[] array = new int[10];
@@ -44,3 +44,34 @@ foreach(int el in array)
         k++;
 
 Console.WriteLine($" => количество четных чисел: {k}");
+*/
+
+//Задача 3: Задайте массив из вещественных чисел с ненулевой дробной частью. 
+//Найдите разницу между максимальным и минимальным элементов массива.
+Console.Clear();
+Random rnd =  new Random();
+
+double[] array = new double[10];
+
+for(int i=0; i<=9;i++){
+
+    array[i] = Math.Round(1.0 + rnd.NextDouble()*1000.01, 2);
+}
+
+foreach(double el in array)
+    Console.Write($" {el}");
+
+double max = 0;
+double min = 10000000;
+foreach(double el in array){
+    if(max<el) 
+        max = el;
+    if(min>el)
+        min = el;
+}
+
+Console.WriteLine();
+Console.WriteLine($"минимальный элемент:{min}, максимальный элемент:{max}, разница равна {max-min}");
+
+
+
